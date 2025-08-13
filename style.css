@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Saira;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #050529;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#contenedor-figura{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cuadro-circulo{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 3px white;
+    border-left: solid 3px white;
+    border-right: solid 3px white;
+    border-radius: 50%;
+}
+
+#circulo{
+    width: 100%;
+    height: 100%;
+    border: solid 5px blue;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#numero{
+    height: 50%;
+    font-size: 9rem;
+    font-weight: 200;
+}
+
+#medida{
+    font-size: 3rem;
+}
+
+.texto{
+    color: white;
+}
+
+#contenedor-piso{
+  width: 100%;
+  height: 20%;
+}
+
+#piso {
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Brillo superior de cada línea */
+    repeating-linear-gradient(
+      to right,
+      rgba(0, 200, 255, 0.7) 12px,
+      rgba(244, 243, 242, 0.7) 12px,
+      rgba(21, 28, 234, 0.892) 12px,
+      transparent 20px
+    ),
+    /* Sombra inferior de cada línea */
+    repeating-linear-gradient(
+      to right,
+      transparent 0px,
+      transparent 19px,
+      rgba(0, 0, 0, 0.4) 20px,
+      rgba(0, 0, 0, 0.4) 21px
+    ),
+    /* Resplandor central */
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 4, 0.785) 10%,
+      transparent 0%
+    );
+  transform: perspective(15rem) rotateX(60deg);
+  transform-origin: top;
+
+    animation: moverPiso 3s linear infinite alternate;
+}
+
+#piso::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgb(44, 5, 235) 0%,
+    rgba(247, 242, 242, 0) 50%
+  );
+  pointer-events: none; /* no interfiere con clics */
+}
+
+@keyframes moverPiso {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}
