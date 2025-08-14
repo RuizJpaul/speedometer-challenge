@@ -87,7 +87,7 @@ body {
             rgba(0, 0, 0, 0.4) 21px),
         /* Resplandor central */
         radial-gradient(ellipse at center,
-            rgba(0, 0, 4, 0.785) 10%,
+            rgb(1, 1, 11) 12%,
             transparent 0%);
     transform: perspective(15rem) rotateX(60deg);
     transform-origin: top;
